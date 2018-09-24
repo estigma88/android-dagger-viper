@@ -9,6 +9,6 @@ import dagger.Component;
 @Singleton
 @Component(modules = {CommentFeedModule.class, CommentServiceModule.class})
 public interface ComponentFeedInteractorComponent {
-    CommentFeedInteractorInterface componentFeedInteractor();
+    CommentFeedInteractor componentFeedInteractorInterface();
 }
 

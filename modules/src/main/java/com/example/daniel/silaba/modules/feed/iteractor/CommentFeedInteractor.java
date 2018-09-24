@@ -10,10 +10,13 @@ import com.example.daniel.silaba.modules.service.comment.CommentServiceResult;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class CommentFeedInteractor implements CommentFeedInteractorInterface {
     private final CommentFeedInteractorOutput output;
     private final CommentService service;
 
+    @Inject
     public CommentFeedInteractor(CommentFeedInteractorOutput output, CommentService service) {
         this.output = output;
         this.service = service;
@@ -64,5 +67,13 @@ public class CommentFeedInteractor implements CommentFeedInteractorInterface {
         } else {
             output.commentFeedDidLoadMore(commentFeedDataList);
         }
+    }
+
+    public CommentFeedInteractorOutput getOutput() {
+        return output;
+    }
+
+    public CommentService getService() {
+        return service;
     }
 }
